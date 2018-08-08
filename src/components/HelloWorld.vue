@@ -31,7 +31,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Prop, Vue } from 'vue-property-decorator';
+import Component from 'vue-class-component'
 import {
     State,
     Getter,
@@ -42,8 +43,14 @@ import {
 
 @Component
 export default class HelloWorld extends Vue {
-    @Getter title: number;
+
   @Prop() private msg!: string;
+
+    @State('title') title: string;
+
+    created () {
+        this.title;
+    }
 }
 </script>
 
