@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -32,9 +32,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import {
+    State,
+    Getter,
+    Action,
+    Mutation,
+    namespace
+} from 'vuex-class'
 
 @Component
 export default class HelloWorld extends Vue {
+    @Getter title: number;
   @Prop() private msg!: string;
 }
 </script>
