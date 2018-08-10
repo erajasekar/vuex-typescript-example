@@ -42,16 +42,16 @@
         Getter,
         Action,
         Mutation,
-        namespace
-    } from 'vuex-class'
+        namespace,
+    } from 'vuex-class';
 
     @Component
     export default class HelloWorld extends Vue {
-        @Prop() private msg!: string;
+        @Getter('count') private count: any; // Doesn't work with strict type like number
+        @Action('inc') private inc: any;
+        @Action('dec') private dec: any;
 
-        @Getter('count') count: any; //Doesn't work with strict type like number
-        @Action('inc') inc : any;
-        @Action('dec') dec : any;
+        @Prop() private msg!: string;
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -38,7 +38,7 @@
 <script lang="ts">
     import Vue from 'vue';
 
-    import { mapGetters, mapActions } from 'vuex'
+    import { mapGetters, mapActions } from 'vuex';
 
     export default Vue.extend({
         name: 'HelloWorldO',
@@ -46,12 +46,12 @@
             msg: String,
         },
         computed: mapGetters([
-            'count'
+            'count',
         ]),
         methods: mapActions([
             'inc',
             'dec',
-        ])
+        ]),
     });
 </script>
 
