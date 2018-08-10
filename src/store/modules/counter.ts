@@ -2,7 +2,7 @@ import {GetterTree, MutationTree, ActionTree, ActionContext} from 'vuex';
 
 
 export class State {
-    public count: number = 5;
+    public count: number = 0;
 }
 
 const getters =  {
