@@ -1,6 +1,11 @@
 <template>
     <div class="hello">
-        <h1>{{ msg }}</h1>
+        <h1>{{ count }}</h1>
+
+        <div>
+            <button class="btn btn-success" @click="inc">+</button>
+        </div>
+
         <p>
             For guide and recipes on how to configure / customize this project,<br>
             check out the
@@ -31,9 +36,22 @@
 </template>
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
+
+    import {
+        State,
+        Getter,
+        Action,
+        Mutation,
+        namespace
+    } from 'vuex-class'
+
     @Component
     export default class HelloWorld extends Vue {
         @Prop() private msg!: string;
+
+        @Getter('count') count: any; //Doesn't work with strict type like number
+        @Action('inc') inc : any;
+        @Action('dec') dec : any;
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

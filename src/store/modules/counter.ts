@@ -1,8 +1,5 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
 import {GetterTree, MutationTree, ActionTree, ActionContext} from "vuex"
 
-Vue.use(Vuex);
 
 export class State {
     count: number = 5;
@@ -32,9 +29,9 @@ const actions = <ActionTree<State, any>> {
     }
 };
 
-export default new Vuex.Store({
-  state: new State(),
-  mutations: mutations,
-  actions: actions,
-  getters: getters,
-});
+export const counter = {
+    state: new State(),
+    getters: getters,
+    mutations: mutations,
+    actions: actions
+};
